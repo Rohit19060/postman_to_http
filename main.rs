@@ -13,6 +13,7 @@ struct Url {
     host: Vec<String>,
     path: Vec<String>,
 }
+
 #[derive(Serialize, Deserialize)]
 struct Header {
     key: String,
@@ -21,6 +22,7 @@ struct Header {
     #[serde(rename = "type")]
     _type: Option<String>,
 }
+
 #[derive(Serialize, Deserialize)]
 struct Auth {
     #[serde(rename = "type")]
@@ -56,6 +58,7 @@ struct Postman {
     variable: Vec<Header>,
     auth: Option<Auth>,
 }
+
 fn main() -> Result<(), Error> {
     let mut file_content = String::new();
     let mut data_file = File::open("test.postman.json").unwrap();
