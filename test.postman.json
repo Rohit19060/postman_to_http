@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "2e070de7-f695-434c-ba62-580ba8380edf",
+		"name": "GitHub API",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11499563"
+	},
+	"item": [
+		{
+			"name": "User info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							" "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users/rohit19060",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"rohit19060"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Issues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Successful POST request\", function () {\r",
+							"//     pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"// });\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/issues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Events",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users/{{username}}/events",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"{{username}}",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Repos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users/{{username}}/repos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"{{username}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Organisation Repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/orgs/king-technologies/repos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"orgs",
+						"king-technologies",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Orgs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users/{{username}}/orgs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"{{username}}",
+						"orgs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repo Issues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/repos/{{username}}/ex_flutter/issues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						"{{username}}",
+						"ex_flutter",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repo Commits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/{{username}}/ex_flutter/commits",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						"{{username}}",
+						"ex_flutter",
+						"commits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repo Languages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/{{username}}/ex_flutter/languages",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						"{{username}}",
+						"ex_flutter",
+						"languages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repo Projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/{{username}}/ex_flutter/projects",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						"{{username}}",
+						"ex_flutter",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Organisation Issues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/orgs/king-technologies/issues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"orgs",
+						"king-technologies",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.github.com"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "rohit19060",
+			"type": "string"
+		}
+	]
+}
